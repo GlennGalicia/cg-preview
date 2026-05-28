@@ -68,10 +68,7 @@
   --color-icon-red-dark: #FCA5A5;
   /* -- CTA / Action ---------------------------------------- */
   --color-whatsapp: #25d366;
-  /* -- Social ---------------------------------------------- */
-  --color-instagram: #E53935;
-  --color-facebook: #1E88E5;
-  /* -- Typography Mobile Sizes ----------------------------- */
+  /* -- Font Sizes Mobile ----------------------------- */
   --fs-hero: 3.4rem;
   --fs-h1: 2.6rem;
   --fs-h2: 2.0rem;
@@ -80,11 +77,9 @@
   --fs-body-lg: 1.5rem;
   --fs-body: 1.5rem;
   --fs-body-sm: 1.3rem;
-  --fs-label-button: 1.5rem;
   --fs-footer: 1.2rem;
   /* -- Font Weights ---------------------------------------- */
   --fw-regular: 400;
-  --fw-medium: 500;
   --fw-semibold: 600;
   --fw-bold: 700;
   --fw-extrabold: 800;
@@ -96,16 +91,12 @@
   --lh-body-lg: 1.65;
   --lh-body: 1.60;
   --lh-body-sm: 1.50;
-  --lh-label: 1.00;
   /* -- Border Radius --------------------------------------- */
-  --radius-sm: 0.4rem;
-  --radius-md: 0.8rem;
   --radius-lg: 1.2rem;
-  --radius-xl: 1.6rem;
   --radius-pill: 90px;
 }
 
-/* -- Typography Tablet Sizes-------------------------------- */
+/* -- Font Sizes Tablet -------------------------------- */
 @media (min-width: 640px) {
   :root {
     --fs-hero: 4.2rem;
@@ -115,7 +106,7 @@
     --fs-body-lg: 1.6rem;
   }
 }
-/* -- Typography Desktop Sizes------------------------------- */
+/* -- Font Sizes Desktop ------------------------------- */
 @media (min-width: 1025px) {
   :root {
     --fs-hero: 5.2rem;
@@ -607,14 +598,6 @@ section {
   }
 }
 
-.display {
-  font-size: var(--fs-hero);
-  font-weight: var(--fw-extrabold);
-  font-family: var(--font-display);
-  color: var(--text-primary);
-  line-height: var(--lh-tight);
-}
-
 h1 {
   font-size: var(--fs-h1);
   font-weight: var(--fw-bold);
@@ -655,38 +638,6 @@ p {
   font-family: var(--font-body);
   color: var(--text-primary);
   line-height: var(--lh-body);
-}
-
-.body-lg {
-  font-size: var(--fs-body-lg);
-  font-weight: var(--fw-regular);
-  font-family: var(--font-body);
-  color: var(--text-primary);
-  line-height: var(--lh-body-lg);
-}
-
-.body-sm {
-  font-size: var(--fs-body-sm);
-  font-weight: var(--fw-regular);
-  font-family: var(--font-body);
-  color: var(--text-primary);
-  line-height: var(--lh-body-sm);
-}
-
-.label {
-  font-size: var(--fs-label-button);
-  font-weight: var(--fw-semibold);
-  font-family: var(--font-body);
-  color: var(--text-primary);
-  line-height: var(--lh-label);
-}
-
-.caption {
-  font-size: var(--fs-footer);
-  font-weight: var(--fw-regular);
-  font-family: var(--font-body);
-  color: var(--text-primary);
-  line-height: var(--lh-body-sm);
 }
 
 /* ============================================================
@@ -772,6 +723,9 @@ p {
 .hero__subtitle {
   color: var(--text-secondary);
   text-align: center;
+  font-size: var(--fs-body-lg);
+  font-weight: var(--fw-regular);
+  line-height: var(--lg-body-lg);
 }
 .hero__cta-group {
   width: 100%;
@@ -811,11 +765,17 @@ p {
 .hero__cta--primary {
   background-color: var(--color-whatsapp);
   color: var(--color-text-btn);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-body);
 }
 .hero__cta--secondary {
   background-color: var(--surface);
-  color: var(--text-primary);
   border: 1.5px solid var(--border);
+  color: var(--text-primary);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-body);
 }
 
 /* Catalog Styles */
@@ -898,6 +858,9 @@ p {
 }
 .card__description {
   color: var(--text-secondary);
+  font-size: var(--fs-body-sm);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-body-sm);
 }
 
 /* Contact Styles */
@@ -965,17 +928,27 @@ p {
 }
 .contact-item__value {
   color: var(--text-secondary);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-body);
 }
 
 /* Footer Styles */
 .footer {
   margin-top: 2.5rem;
-  padding-block: 1.5rem;
   border-top: 1px solid var(--border);
+}
+.footer__group {
+  width: 95%;
+  max-width: 120rem;
+  margin: 0 auto;
+  padding-block: 2rem;
 }
 @media (min-width: 640px) {
   .footer {
     margin-top: 4rem;
+  }
+  .footer__group {
     display: flex;
     gap: 5rem;
     justify-content: space-evenly;
@@ -987,8 +960,11 @@ p {
   }
 }
 .footer__copy, .footer__city, .footer__developer {
+  font-size: var(--fs-footer);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-body-sm);
   text-align: center;
-  color: var(--text-secondary);
+  color: var(--text-primary);
 }
 .footer__developer a {
   color: var(--color-brand-blue);
