@@ -1,0 +1,996 @@
+@charset "UTF-8";
+/* ============================================================
+   Gases y Soldaduras CG preview — Variables
+   Reusable SCSS utilities
+   © 2026 · Developed by Glenn Galicia
+   ============================================================ */
+/* -- Mobile First Sizes -------------------------------------- */
+/* -- Section Padding ---------------------------------------- */
+:root {
+  /* -- Font Families --------------------------------------- */
+  --font-display: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+  /* -- Background Page ------------------------------------- */
+  --color-bg-light: #F5F7FA;
+  --color-bg-dark: #07101C;
+  /* -- Brand ----------------------------------------------- */
+  --color-brand-green: #4a8a3a;
+  /* Primary green — badges, icons, accents (light) */
+  --color-brand-green-lime: #e2f89c;
+  /* Lime green — badges, headings (dark) */
+  --color-brand-blue: #3f7cac;
+  /* Brand blue — logo CG, headings, links */
+  /* -- Borders / Dividers ---------------------------------- */
+  --color-border-light: #d1dce5;
+  --color-border-dark: #1a2a3a;
+  /* -- Badge ----------------------------------------------- */
+  --color-badge-bg-light: #E8F3C1;
+  --color-badge-bg-dark: #E2F89C;
+  --color-badge-text-light: #4A8A3A;
+  --color-badge-text-dark: #4A8A3A;
+  --color-badge-border-light: #C8DFA0;
+  --color-badge-border-dark: #C8E870;
+  /* -- Typography ------------------------------------------ */
+  --color-text-primary-light: #0f1c2e;
+  --color-text-primary-dark: #e8edf2;
+  --color-text-secondary-light: #4a6070;
+  --color-text-secondary-dark: #8fa8bc;
+  --color-text-btn: #f0f4f8;
+  /* -- Surface / Cards ------------------------------------- */
+  --color-surface-light: #FFFFFF;
+  --color-surface-dark: #07101C;
+  /* ── Icon backgrounds ------------------------------------ */
+  --color-icon-bg: #e2f89c;
+  --color-icon-bg-blue-light: #DBEAFE;
+  --color-icon-bg-blue-dark: #1E3A5F;
+  --color-icon-bg-green-light: #DCFCE7;
+  --color-icon-bg-green-dark: #14402A;
+  --color-icon-bg-orange-light: #FFEDD5;
+  --color-icon-bg-orange-dark: #431407;
+  --color-icon-bg-yellow-light: #FEF9C3;
+  --color-icon-bg-yellow-dark: #3B2F00;
+  --color-icon-bg-purple-light: #EDE9FE;
+  --color-icon-bg-purple-dark: #2E1065;
+  --color-icon-bg-red-light: #FEE2E2;
+  --color-icon-bg-red-dark: #450A0A;
+  /* ── Icon Color ------------------------------------ */
+  --color-icon-blue-light: #1D4ED8;
+  --color-icon-blue-dark: #93C5FD;
+  --color-icon-green-light: #15803D;
+  --color-icon-green-dark: #86EFAC;
+  --color-icon-orange-light: #C2410C;
+  --color-icon-orange-dark: #FDBA74;
+  --color-icon-yellow-light: #A16207;
+  --color-icon-yellow-dark: #FDE047;
+  --color-icon-purple-light: #6D28D9;
+  --color-icon-purple-dark: #C4B5FD;
+  --color-icon-red-light: #B91C1C;
+  --color-icon-red-dark: #FCA5A5;
+  /* -- CTA / Action ---------------------------------------- */
+  --color-whatsapp: #25d366;
+  /* -- Social ---------------------------------------------- */
+  --color-instagram: #E53935;
+  --color-facebook: #1E88E5;
+  /* -- Typography Mobile Sizes ----------------------------- */
+  --fs-hero: 3.4rem;
+  --fs-h1: 2.6rem;
+  --fs-h2: 2.0rem;
+  --fs-h3: 1.6rem;
+  --fs-h4: 1.3rem;
+  --fs-body-lg: 1.5rem;
+  --fs-body: 1.5rem;
+  --fs-body-sm: 1.3rem;
+  --fs-label-button: 1.5rem;
+  --fs-footer: 1.2rem;
+  /* -- Font Weights ---------------------------------------- */
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+  /* -- Line Heights ---------------------------------------- */
+  --lh-tight: 1.12;
+  --lh-heading: 1.20;
+  --lh-h2: 1.30;
+  --lh-h3: 1.40;
+  --lh-body-lg: 1.65;
+  --lh-body: 1.60;
+  --lh-body-sm: 1.50;
+  --lh-label: 1.00;
+  /* -- Border Radius --------------------------------------- */
+  --radius-sm: 0.4rem;
+  --radius-md: 0.8rem;
+  --radius-lg: 1.2rem;
+  --radius-xl: 1.6rem;
+  --radius-pill: 90px;
+}
+
+/* -- Typography Tablet Sizes-------------------------------- */
+@media (min-width: 640px) {
+  :root {
+    --fs-hero: 4.2rem;
+    --fs-h1: 3rem;
+    --fs-h2: 2.1rem;
+    --fs-h3: 1.7rem;
+    --fs-body-lg: 1.6rem;
+  }
+}
+/* -- Typography Desktop Sizes------------------------------- */
+@media (min-width: 1025px) {
+  :root {
+    --fs-hero: 5.2rem;
+    --fs-h1: 3.6rem;
+    --fs-h2: 2.4rem;
+    --fs-h3: 1.8rem;
+    --fs-body-lg: 1.7rem;
+    --fs-body: 1.6rem;
+  }
+}
+/* -- Light mode (default) ----------------------------------- */
+[data-theme=light],
+:root {
+  --bg: var(--color-bg-light);
+  --heading-accent: var(--color-brand-green);
+  --section-label: var(--color-brand-green);
+  --border: var(--color-border-light);
+  --badge-bg: var(--color-badge-bg-light);
+  --badge-text: var(--color-badge-text-light);
+  --badge-border: var(--color-badge-border-light);
+  --text-primary: var(--color-text-primary-light);
+  --text-secondary: var(--color-text-secondary-light);
+  --surface: var(--color-surface-light);
+  --icon-bg-blue: var(--color-icon-bg-blue-light);
+  --icon-bg-green: var(--color-icon-bg-green-light);
+  --icon-bg-orange: var(--color-icon-bg-orange-light);
+  --icon-bg-yellow: var(--color-icon-bg-yellow-light);
+  --icon-bg-purple: var(--color-icon-bg-purple-light);
+  --icon-bg-red: var(--color-icon-bg-red-light);
+  --icon-blue: var(--color-icon-blue-light);
+  --icon-green: var(--color-icon-green-light);
+  --icon-orange: var(--color-icon-orange-light);
+  --icon-yellow: var(--color-icon-yellow-light);
+  --icon-purple: var(--color-icon-purple-light);
+  --icon-red: var(--color-icon-red-light);
+}
+
+/* -- Dark mode --------------------------------------------- */
+[data-theme=dark] {
+  --bg: var(--color-bg-dark);
+  --heading-accent: var(--color-brand-green-lime);
+  --section-label: var(--color-brand-green-lime);
+  --border: var(--color-border-dark);
+  --badge-bg: var(--color-badge-bg-dark);
+  --badge-text: var(--color-badge-text-dark);
+  --badge-border: var(--color-badge-border-dark);
+  --text-primary: var(--color-text-primary-dark);
+  --text-secondary: var(--color-text-secondary-dark);
+  --surface: var(--color-surface-dark);
+  --icon-bg-blue: var(--color-icon-bg-blue-dark);
+  --icon-bg-green: var(--color-icon-bg-green-dark);
+  --icon-bg-orange: var(--color-icon-bg-orange-dark);
+  --icon-bg-yellow: var(--color-icon-bg-yellow-dark);
+  --icon-bg-purple: var(--color-icon-bg-purple-dark);
+  --icon-bg-red: var(--color-icon-bg-red-dark);
+  --icon-blue: var(--color-icon-blue-dark);
+  --icon-green: var(--color-icon-green-dark);
+  --icon-orange: var(--color-icon-orange-dark);
+  --icon-yellow: var(--color-icon-yellow-dark);
+  --icon-purple: var(--color-icon-purple-dark);
+  --icon-red: var(--color-icon-red-dark);
+}
+
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+  line-height: 1.15;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers.
+ */
+body {
+  margin: 0;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+main {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+a {
+  background-color: transparent;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+  /* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+img {
+  border-style: none;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+  /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type=search] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+details {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+  display: list-item;
+}
+
+/* Misc
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10+.
+ */
+template {
+  display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+[hidden] {
+  display: none;
+}
+
+/* ============================================================
+   Gases y Soldaduras CG preview — Mixins
+   Reusable SCSS utilities
+   © 2026 · Developed by Glenn Galicia
+   ============================================================ */
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  /* 1rem = 10px */
+  scroll-behavior: smooth;
+  background-color: var(--bg);
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 1.6rem;
+  /* 16px */
+  font-family: var(--font-body);
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+}
+
+/* -- Images --------------------------------------------- */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* -- Links ---------------------------------------------- */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* -- Principal Container -------------------------------- */
+.main-container {
+  width: 95%;
+  max-width: 120rem;
+  margin: 0 auto;
+  padding-inline: 1.6rem;
+}
+@media (min-width: 640px) {
+  .main-container {
+    padding-inline: 0;
+  }
+}
+
+/* -- Section Spacing -------------------------------- */
+section {
+  padding-top: 2.5rem;
+}
+@media (min-width: 640px) {
+  section {
+    padding-top: 4rem;
+  }
+}
+@media (min-width: 1025px) {
+  section {
+    padding-top: 4.5rem;
+  }
+}
+
+.display {
+  font-size: var(--fs-hero);
+  font-weight: var(--fw-extrabold);
+  font-family: var(--font-display);
+  color: var(--text-primary);
+  line-height: var(--lh-tight);
+}
+
+h1 {
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-bold);
+  font-family: var(--font-display);
+  color: var(--text-primary);
+  line-height: var(--lh-heading);
+}
+
+h2 {
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-bold);
+  font-family: var(--font-display);
+  color: var(--text-primary);
+  line-height: var(--lh-h2);
+}
+
+h3 {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-bold);
+  font-family: var(--font-display);
+  color: var(--text-primary);
+  line-height: var(--lh-h3);
+}
+
+h4 {
+  font-size: var(--fs-h4);
+  font-weight: var(--fw-bold);
+  font-family: var(--font-body);
+  color: var(--heading-accent);
+  line-height: var(--lh-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+p {
+  font-size: var(--fs-body);
+  font-weight: var(--fw-regular);
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  line-height: var(--lh-body);
+}
+
+.body-lg {
+  font-size: var(--fs-body-lg);
+  font-weight: var(--fw-regular);
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  line-height: var(--lh-body-lg);
+}
+
+.body-sm {
+  font-size: var(--fs-body-sm);
+  font-weight: var(--fw-regular);
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  line-height: var(--lh-body-sm);
+}
+
+.label {
+  font-size: var(--fs-label-button);
+  font-weight: var(--fw-semibold);
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  line-height: var(--lh-label);
+}
+
+.caption {
+  font-size: var(--fs-footer);
+  font-weight: var(--fw-regular);
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  line-height: var(--lh-body-sm);
+}
+
+/* ============================================================
+   Gases y Soldaduras CG preview — Utilities
+   Reusable SCSS utilities
+   © 2026 · Developed by Glenn Galicia
+   ============================================================ */
+/* Nav Styles */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--bg);
+}
+
+.nav {
+  width: 95%;
+  max-width: 120rem;
+  margin: 0 auto;
+  padding-inline: 1.6rem;
+  padding-block: 2rem;
+  color: var(--text-primary);
+  display: flex;
+  justify-content: space-between;
+}
+.nav__heading {
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-bold);
+}
+.nav__logo {
+  color: var(--color-brand-blue);
+}
+.nav__toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+}
+.nav__toggle-icon--sun {
+  display: none;
+}
+.nav__toggle-icon--moon {
+  display: block;
+}
+
+[data-theme=dark] .nav__toggle-icon--sun {
+  display: block;
+}
+[data-theme=dark] .nav__toggle-icon--moon {
+  display: none;
+}
+
+/* Hero Styles */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+.hero__badge {
+  padding: 0.5rem 1.5rem;
+  background-color: var(--badge-bg);
+  color: var(--badge-text);
+  border: 1.5px solid var(--badge-border);
+  border-radius: var(--radius-pill);
+  font-weight: var(--fw-semibold);
+}
+.hero__heading {
+  line-height: var(--lh-heading);
+  text-align: center;
+}
+.hero__highlight--blue {
+  color: var(--color-brand-blue);
+}
+.hero__highlight--green {
+  color: var(--heading-accent);
+}
+.hero__highlight-group {
+  display: block;
+}
+.hero__subtitle {
+  color: var(--text-secondary);
+  text-align: center;
+}
+.hero__cta-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+.hero__cta-group > * {
+  flex: 1;
+}
+@media (min-width: 640px) {
+  .hero__cta-group {
+    width: auto;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .hero__cta-group > * {
+    flex: none;
+  }
+}
+.hero__cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 0.5rem 1.5rem;
+  border-radius: var(--radius-lg);
+}
+@media (min-width: 640px) {
+  .hero__cta {
+    width: auto;
+    min-width: 20rem;
+  }
+}
+.hero__cta--primary {
+  background-color: var(--color-whatsapp);
+  color: var(--color-text-btn);
+}
+.hero__cta--secondary {
+  background-color: var(--surface);
+  color: var(--text-primary);
+  border: 1.5px solid var(--border);
+}
+
+/* Catalog Styles */
+.catalog__eyebrow {
+  text-transform: uppercase;
+  color: var(--section-label);
+  font-weight: var(--fw-extrabold);
+}
+.catalog__heading {
+  padding-top: 1rem;
+}
+.catalog__grid {
+  padding-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1rem;
+}
+@media (min-width: 640px) {
+  .catalog__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+  }
+}
+@media (min-width: 1025px) {
+  .catalog__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+  }
+}
+.catalog__grid li:nth-child(1) .card__icon {
+  background-color: var(--icon-bg-blue);
+  color: var(--icon-blue);
+}
+.catalog__grid li:nth-child(2) .card__icon {
+  background-color: var(--icon-bg-green);
+  color: var(--icon-green);
+}
+.catalog__grid li:nth-child(3) .card__icon {
+  background-color: var(--icon-bg-orange);
+  color: var(--icon-orange);
+}
+.catalog__grid li:nth-child(4) .card__icon {
+  background-color: var(--icon-bg-yellow);
+  color: var(--icon-yellow);
+}
+.catalog__grid li:nth-child(5) .card__icon {
+  background-color: var(--icon-bg-purple);
+  color: var(--icon-purple);
+}
+.catalog__grid li:nth-child(6) .card__icon {
+  background-color: var(--icon-bg-red);
+  color: var(--icon-red);
+}
+
+/* Card Styles */
+.card {
+  background-color: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  border: 1.5px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.card__icon {
+  width: 4.8rem;
+  height: 4.8rem;
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  flex-shrink: 0;
+}
+.card__icon svg {
+  width: 100%;
+  height: 100%;
+}
+.card__detail {
+  min-width: 0;
+}
+.card__description {
+  color: var(--text-secondary);
+}
+
+/* Contact Styles */
+.contact__eyebrow {
+  text-transform: uppercase;
+  color: var(--section-label);
+  font-weight: var(--fw-extrabold);
+}
+.contact__heading {
+  padding-top: 1rem;
+}
+.contact__grid {
+  padding-top: 2rem;
+}
+@media (min-width: 640px) {
+  .contact__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+  }
+}
+.contact__list {
+  padding: 2rem;
+  background-color: var(--surface);
+  border-radius: var(--radius-lg);
+  border: 1.5px solid var(--border);
+}
+.contact__map iframe {
+  display: none;
+}
+@media (min-width: 640px) {
+  .contact__map iframe {
+    width: 100%;
+    height: 45rem;
+    display: block;
+    border-radius: var(--radius-lg);
+    border: 1.5px solid var(--border);
+  }
+}
+
+/* Contact Items Styles */
+.contact-item {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+.contact-item:last-of-type {
+  margin-bottom: 0;
+}
+.contact-item a {
+  display: block;
+}
+.contact-item__icon {
+  width: 4.8rem;
+  height: 4.8rem;
+  padding: 1.2rem;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-icon-bg);
+  flex-shrink: 0;
+}
+.contact-item__label {
+  text-transform: uppercase;
+  color: var(--section-label);
+  font-weight: var(--fw-bold);
+}
+.contact-item__value {
+  color: var(--text-secondary);
+}
+
+/* Footer Styles */
+.footer {
+  margin-top: 2.5rem;
+  padding-block: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+@media (min-width: 640px) {
+  .footer {
+    margin-top: 4rem;
+    display: flex;
+    gap: 5rem;
+    justify-content: space-evenly;
+  }
+}
+@media (min-width: 1025px) {
+  .footer {
+    margin-top: 4.5rem;
+  }
+}
+.footer__copy, .footer__city, .footer__developer {
+  text-align: center;
+  color: var(--text-secondary);
+}
+.footer__developer a {
+  color: var(--color-brand-blue);
+}
+/*# sourceMappingURL=app.css.map */
